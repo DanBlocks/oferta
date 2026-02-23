@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Previne indexarea -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>DanBlocks × ProfilDecor - Google Ads Marketing</title>
+
+    <!-- Auth Screen -->
+    <div id="authScreen" style="
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(135deg, #2c2c30 0%, #1d1d20 100%);
+        z-index: 100000; display: flex; align-items: center; justify-content: center;
+        font-family: 'Inter', sans-serif;">
+        <div style="background: white; padding: 40px; border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3); max-width: 400px; width: 90%; text-align: center;">
+            <img src="https://danblocks-com.s3.us-west-2.amazonaws.com/danblocks+logo+transparent.png"
+                style="width: 60px; height: 60px; margin-bottom: 20px;">
+            <h2 style="color: #27272a; margin-bottom: 10px; font-family: 'CalHeading', sans-serif;">Acces Exclusiv</h2>
+            <p style="color: #71717a; margin-bottom: 10px; font-size: 14px;">
+                Construiește sisteme. Câștigă timp. Crește exponențial.
+            </p>
+            <p style="color: #a1a1aa; margin-bottom: 30px; font-size: 13px;">
+                Această ofertă specială este disponibilă doar pentru partenerii selectați. Introduceți codul de acces pentru a continua.
+            </p>
+            <input type="password" id="passwordInput" placeholder="Cod de acces" style="
+                width: 100%; padding: 12px; border: 1px solid #e5e5e5; border-radius: 8px;
+                font-size: 16px; margin-bottom: 20px; box-sizing: border-box;
+            " onkeypress="if(event.key === 'Enter') checkPassword()">
+            <button onclick="checkPassword()" style="
+                width: 100%; padding: 12px;
+                background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+                color: white; border: none; border-radius: 8px; font-size: 16px;
+                font-weight: 600; cursor: pointer; font-family: 'CalHeading', sans-serif;">
+                Deblochează Oferta
+            </button>
+            <p id="errorMsg" style="color: #ef4444; margin-top: 15px; display: none; font-size: 14px;">
+                Cod incorect. Verificați și încercați din nou.
+            </p>
+            <p style="color: #a1a1aa; margin-top: 20px; font-size: 12px;">Powered by DanBlocks</p>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            if (password === 'profildecor2026') {
+                document.getElementById('authScreen').style.display = 'none';
+            } else {
+                document.getElementById('errorMsg').style.display = 'block';
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordInput').focus();
+            }
+        }
+        window.onload = function() {
+            document.getElementById('passwordInput').focus();
+        }
+    </script>
+
+    <style>
+        @font-face {
+            font-family: 'CalHeading';
+            src: url('https://danblocks-com.s3.us-west-2.amazonaws.com/fonts/primary-heading-cal.ttf') format('truetype');
+            font-weight: 600; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Childish';
+            src: url('https://danblocks-com.s3.us-west-2.amazonaws.com/fonts/childish.regular.ttf') format('truetype');
+            font-weight: 400; font-style: normal; font-display: swap;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --db-bg: #f4f4f4;
+            --db-bg-secondary: #f8f8f8;
+            --db-white: #ffffff;
+            --db-black: #27272a;
+            --db-gray: #71717a;
+            --db-gray-light: #a1a1aa;
+            --db-border: rgba(212, 212, 216, 0.7);
+            --db-accent: #f97316;
+            --db-accent-hover: #ea6a0c;
+            --db-gradient-dark: linear-gradient(135deg, #2c2c30 0%, #1d1d20 100%);
+            --db-gradient-accent: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            --db-success: #10b981;
+            --db-blue: #3b82f6;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--db-bg);
+            color: var(--db-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.03; z-index: 1; pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+        }
+
+        .container {
+            max-width: 1400px; margin: 0 auto;
+            padding: 0 var(--space-lg); position: relative; z-index: 2;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(244, 244, 244, 0.8);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--db-border);
+            transition: all 0.3s var(--ease-smooth);
+        }
+        .navbar.scrolled { background: rgba(244, 244, 244, 0.95); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .nav-content { display: flex; align-items: center; justify-content: space-between; padding: var(--space-md) 0; }
+        .nav-logo { display: flex; align-items: center; gap: var(--space-md); text-decoration: none; }
+        .logo-img { width: 48px; height: 48px; transition: transform 0.3s var(--ease-bounce); object-fit: contain; }
+        .nav-logo:hover .logo-img { transform: rotate(-10deg) scale(1.1); }
+        .nav-partnership {
+            font-family: 'CalHeading', sans-serif; font-size: 1.5rem; color: var(--db-black);
+            display: flex; align-items: center; gap: var(--space-sm);
+        }
+        .nav-x { font-family: 'Childish', cursive; color: var(--db-accent); font-size: 1.8rem; animation: pulse 2s infinite; }
+        .nav-cta {
+            padding: 12px 24px; background: var(--db-gradient-dark); color: white; border: none;
+            border-radius: 12px; font-family: 'CalHeading', sans-serif; font-size: 1rem;
+            cursor: pointer; transition: all 0.3s var(--ease-smooth);
+            box-shadow: inset 0px 2px 0.4px 0px rgba(255, 255, 255, 0.16);
+            text-decoration: none; display: inline-block; white-space: nowrap;
+        }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: calc(80px + var(--space-3xl)) var(--space-lg) var(--space-3xl);
+            position: relative; overflow: hidden; background: var(--db-gradient-dark);
+        }
+        .hero-grid {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 50px 50px; animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove { 0% { transform: translate(0, 0); } 100% { transform: translate(50px, 50px); } }
+        .hero-content { text-align: center; position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; width: 100%; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: var(--space-xs);
+            padding: 8px 20px; background: rgba(249, 115, 22, 0.1);
+            border: 1px solid var(--db-accent); border-radius: 50px;
+            margin-bottom: var(--space-lg); animation: fadeInDown 0.8s var(--ease-smooth);
+        }
+        .hero-badge-text { font-family: 'CalHeading', sans-serif; color: var(--db-accent); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.5px; }
+        .hero-title {
+            font-family: 'CalHeading', sans-serif; font-size: clamp(2.5rem, 8vw, 5.5rem);
+            line-height: 1.1; color: white; margin-bottom: var(--space-lg);
+            animation: fadeInUp 0.8s var(--ease-smooth) 0.2s both;
+        }
+        .hero-title-accent { font-family: 'Childish', cursive; color: var(--db-accent); display: inline-block; animation: pulse 2s infinite; }
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.4rem); color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--space-xl); animation: fadeInUp 0.8s var(--ease-smooth) 0.4s both;
+            font-weight: 300; padding: 0 var(--space-sm); max-width: 700px; margin-left: auto; margin-right: auto;
+        }
+        .hero-stats {
+            display: flex; justify-content: center; gap: var(--space-xl);
+            margin-top: var(--space-3xl); animation: fadeInUp 0.8s var(--ease-smooth) 0.6s both; flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; min-width: 120px; }
+        .stat-number { font-family: 'Childish', cursive; font-size: clamp(2rem, 5vw, 3rem); color: var(--db-accent); display: block; }
+        .stat-label { color: rgba(255, 255, 255, 0.7); font-size: clamp(0.75rem, 2vw, 0.9rem); text-transform: uppercase; letter-spacing: 1px; margin-top: var(--space-xs); }
+        .floating-element { position: absolute; pointer-events: none; opacity: 0.1; color: white; }
+        .floating-element:nth-child(1) { top: 15%; left: 10%; font-size: 3rem; animation: float 6s ease-in-out infinite; }
+        .floating-element:nth-child(2) { top: 20%; right: 15%; font-size: 2.5rem; animation: float 8s ease-in-out infinite 1s; }
+        .floating-element:nth-child(3) { bottom: 20%; left: 20%; font-size: 2rem; animation: float 7s ease-in-out infinite 2s; }
+        .floating-element:nth-child(4) { bottom: 30%; right: 10%; font-size: 2.8rem; animation: float 9s ease-in-out infinite 0.5s; }
+
+        /* ===== SECTION STYLES ===== */
+        .section { padding: var(--space-3xl) 0; }
+        .section-dark { background: var(--db-white); border-top: 1px solid var(--db-border); border-bottom: 1px solid var(--db-border); }
+        .section-header { text-align: center; margin-bottom: var(--space-3xl); padding: 0 var(--space-sm); }
+        .section-label { font-family: 'Childish', cursive; color: var(--db-accent); font-size: clamp(1rem, 2.5vw, 1.2rem); margin-bottom: var(--space-sm); display: block; }
+        .section-title { font-family: 'CalHeading', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--db-black); margin-bottom: var(--space-md); }
+        .section-subtitle { font-size: clamp(1rem, 2.5vw, 1.2rem); color: var(--db-gray); max-width: 700px; margin: 0 auto; }
+
+        /* ===== INTRO ===== */
+        .intro-section { padding: var(--space-3xl) 0 var(--space-xl); }
+        .intro-card {
+            background: var(--db-white); border: 1px solid var(--db-border); border-radius: 24px;
+            padding: var(--space-2xl); max-width: 900px; margin: 0 auto;
+        }
+        .intro-card p { color: var(--db-gray); font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.8; margin-bottom: var(--space-md); }
+        .intro-card p:last-child { margin-bottom: 0; }
+        .intro-card strong { color: var(--db-black); }
+        .intro-highlight {
+            background: rgba(249, 115, 22, 0.05); border-left: 4px solid var(--db-accent);
+            padding: var(--space-md) var(--space-lg); border-radius: 0 12px 12px 0;
+            margin: var(--space-lg) 0; font-style: italic;
+        }
+
+        /* ===== BENEFIT CARDS ===== */
+        .benefits-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: var(--space-lg); margin-top: var(--space-xl);
+        }
+        .benefit-card {
+            background: var(--db-white); border: 1px solid var(--db-border); border-radius: 16px;
+            padding: var(--space-lg); transition: all 0.3s var(--ease-smooth); cursor: default;
+        }
+        .benefit-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--db-accent); }
+        .benefit-icon {
+            width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;
+            background: rgba(249, 115, 22, 0.1); border-radius: 14px; font-size: 1.8rem;
+            margin-bottom: var(--space-md); transition: all 0.3s var(--ease-smooth);
+        }
+        .benefit-card:hover .benefit-icon { background: var(--db-gradient-accent); transform: scale(1.1) rotate(5deg); }
+        .benefit-title { font-family: 'CalHeading', sans-serif; font-size: 1.1rem; color: var(--db-black); margin-bottom: var(--space-xs); }
+        .benefit-text { color: var(--db-gray); font-size: 0.9rem; line-height: 1.6; }
+
+        /* ===== FEATURE CARDS ===== */
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+            gap: var(--space-lg); margin-top: var(--space-xl);
+        }
+        .feature-card {
+            background: var(--db-white); border: 1px solid var(--db-border); border-radius: 20px;
+            padding: var(--space-xl); transition: all 0.3s var(--ease-smooth); position: relative; overflow: hidden;
+        }
+        .feature-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: var(--db-gradient-accent); transform: scaleX(0); transition: transform 0.4s var(--ease-smooth);
+        }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--db-accent); }
+        .feature-card:hover::before { transform: scaleX(1); }
+        .feature-card-icon {
+            width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;
+            background: rgba(249, 115, 22, 0.1); border-radius: 16px; font-size: 2rem;
+            margin-bottom: var(--space-md); transition: all 0.3s var(--ease-smooth);
+        }
+        .feature-card:hover .feature-card-icon { background: var(--db-gradient-accent); transform: scale(1.1) rotate(10deg); }
+        .feature-card-title { font-family: 'CalHeading', sans-serif; font-size: clamp(1.2rem, 3vw, 1.4rem); color: var(--db-black); margin-bottom: var(--space-sm); }
+        .feature-card-desc { color: var(--db-gray); font-size: 0.95rem; line-height: 1.7; }
+        .feature-list { list-style: none; margin-top: var(--space-md); }
+        .feature-list li {
+            display: flex; align-items: flex-start; gap: var(--space-sm); padding: 8px 0;
+            border-bottom: 1px solid rgba(212, 212, 216, 0.3); color: var(--db-gray); font-size: 0.9rem; line-height: 1.5;
+        }
+        .feature-list li:last-child { border-bottom: none; }
+        .feature-list li::before {
+            content: '✓'; color: var(--db-accent); font-weight: 700; flex-shrink: 0;
+            width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;
+            background: rgba(249, 115, 22, 0.1); border-radius: 50%; font-size: 0.75rem; margin-top: 2px;
+        }
+        .feature-list strong { color: var(--db-black); font-weight: 600; }
+
+        /* ===== CAMPAIGNS ===== */
+        .campaigns-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: var(--space-lg); margin-top: var(--space-xl);
+        }
+        .campaign-card {
+            background: var(--db-white); border: 1px solid var(--db-border); border-radius: 20px;
+            padding: var(--space-lg); text-align: center; transition: all 0.3s var(--ease-smooth);
+        }
+        .campaign-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--db-accent); }
+        .campaign-icon {
+            width: 72px; height: 72px; display: flex; align-items: center; justify-content: center;
+            background: var(--db-gradient-accent); border-radius: 20px; font-size: 2.2rem;
+            margin: 0 auto var(--space-md); animation: iconFloat 3s ease-in-out infinite;
+        }
+        .campaign-title { font-family: 'CalHeading', sans-serif; font-size: 1.3rem; color: var(--db-black); margin-bottom: var(--space-sm); }
+        .campaign-desc { color: var(--db-gray); font-size: 0.9rem; line-height: 1.6; }
+        .campaign-list { list-style: none; text-align: left; margin-top: var(--space-md); }
+        .campaign-list li { padding: 6px 0; color: var(--db-gray); font-size: 0.85rem; display: flex; gap: 8px; align-items: flex-start; }
+        .campaign-list li::before { content: '→'; color: var(--db-accent); font-weight: 700; flex-shrink: 0; }
+
+        /* ===== PRICING ===== */
+        .pricing-section { padding: var(--space-3xl) 0; background: var(--db-bg); }
+        .pricing-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+            gap: var(--space-lg); max-width: 1000px; margin: var(--space-xl) auto 0;
+        }
+        .pricing-card {
+            background: var(--db-white); border: 1px solid var(--db-border); border-radius: 24px;
+            padding: var(--space-xl); position: relative; transition: all 0.4s var(--ease-smooth); overflow: hidden;
+        }
+        .pricing-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: var(--db-gradient-accent); transform: scaleX(0); transition: transform 0.4s var(--ease-smooth);
+        }
+        .pricing-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,0.12); border-color: var(--db-accent); }
+        .pricing-card:hover::before { transform: scaleX(1); }
+        .pricing-card.featured { border: 2px solid var(--db-accent); }
+        .pricing-header { text-align: center; padding-bottom: var(--space-lg); border-bottom: 1px solid var(--db-border); margin-bottom: var(--space-lg); }
+        .pricing-icon {
+            width: 64px; height: 64px; margin: 0 auto var(--space-md);
+            display: flex; align-items: center; justify-content: center;
+            background: var(--db-gradient-accent); border-radius: 16px; font-size: 2rem;
+        }
+        .pricing-name { font-family: 'CalHeading', sans-serif; font-size: 1.6rem; color: var(--db-black); margin-bottom: var(--space-xs); }
+        .pricing-desc { color: var(--db-gray); font-size: 0.95rem; }
+        .pricing-price { text-align: center; margin: var(--space-lg) 0; }
+        .price-amount {
+            font-family: 'CalHeading', sans-serif; font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--db-black); display: flex; align-items: baseline; justify-content: center; gap: 8px;
+        }
+        .price-amount .accent-number { font-family: 'Childish', cursive; color: var(--db-accent); }
+        .price-currency { font-size: 1.3rem; color: var(--db-gray); font-weight: 400; }
+        .price-period { font-size: 0.95rem; color: var(--db-gray-light); margin-top: var(--space-xs); }
+        .price-note { font-size: 0.85rem; color: var(--db-success); margin-top: var(--space-sm); font-weight: 600; }
+        .pricing-features { list-style: none; margin: var(--space-lg) 0; }
+        .pricing-features li {
+            display: flex; align-items: flex-start; gap: var(--space-sm); padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(212, 212, 216, 0.3); transition: all 0.3s var(--ease-smooth);
+        }
+        .pricing-features li:last-child { border-bottom: none; }
+        .pricing-features li:hover { transform: translateX(4px); }
+        .pricing-features .fi {
+            width: 24px; height: 24px; border-radius: 50%; background: rgba(249, 115, 22, 0.1);
+            display: flex; align-items: center; justify-content: center; color: var(--db-accent);
+            flex-shrink: 0; font-size: 0.85rem; margin-top: 2px;
+        }
+        .pricing-features .ft { flex: 1; color: var(--db-gray); line-height: 1.5; font-size: 0.9rem; }
+        .pricing-features .fh { font-family: 'CalHeading', sans-serif; color: var(--db-black); font-weight: 600; }
+        .pricing-cta {
+            width: 100%; padding: 16px 24px; background: var(--db-gradient-dark); color: white;
+            border: none; border-radius: 12px; font-family: 'CalHeading', sans-serif;
+            font-size: 1.1rem; cursor: pointer; transition: all 0.3s var(--ease-smooth);
+            box-shadow: inset 0px 2px 0.4px 0px rgba(255, 255, 255, 0.16);
+            text-decoration: none; display: block; text-align: center;
+        }
+        .pricing-cta:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+        .pricing-cta.accent { background: var(--db-gradient-accent); }
+
+        /* ===== BUDGET ===== */
+        .budget-callout {
+            background: var(--db-white); border: 2px solid var(--db-accent); border-radius: 24px;
+            padding: var(--space-2xl); max-width: 900px; margin: var(--space-xl) auto 0; position: relative;
+        }
+        .budget-icon { font-size: 2.5rem; margin-bottom: var(--space-md); }
+        .budget-title { font-family: 'CalHeading', sans-serif; font-size: 1.5rem; color: var(--db-black); margin-bottom: var(--space-sm); }
+        .budget-amount { font-family: 'Childish', cursive; color: var(--db-accent); font-size: 1.8rem; margin-bottom: var(--space-md); }
+        .budget-phases { list-style: none; }
+        .budget-phases li { padding: 8px 0; color: var(--db-gray); font-size: 0.95rem; display: flex; gap: 10px; align-items: flex-start; }
+        .budget-phases li strong { color: var(--db-black); }
+        .budget-note {
+            margin-top: var(--space-lg); padding: var(--space-md); background: rgba(249, 115, 22, 0.05);
+            border-radius: 12px; color: var(--db-gray); font-size: 0.9rem; line-height: 1.7;
+        }
+
+        /* ===== MAINTENANCE ===== */
+        .maintenance-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            gap: var(--space-lg); margin-top: var(--space-xl);
+        }
+        .maintenance-item {
+            background: var(--db-white); border: 1px solid var(--db-border); border-radius: 16px;
+            padding: var(--space-lg); display: flex; gap: var(--space-md); align-items: flex-start;
+            transition: all 0.3s var(--ease-smooth);
+        }
+        .maintenance-item:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.06); }
+        .maintenance-icon {
+            width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+            background: rgba(249, 115, 22, 0.1); border-radius: 12px; font-size: 1.4rem; flex-shrink: 0;
+        }
+        .maintenance-title { font-family: 'CalHeading', sans-serif; font-size: 1rem; color: var(--db-black); margin-bottom: 4px; }
+        .maintenance-desc { color: var(--db-gray); font-size: 0.85rem; line-height: 1.5; }
+
+        /* ===== STEPS ===== */
+        .steps-container { max-width: 800px; margin: var(--space-xl) auto 0; }
+        .step {
+            display: flex; gap: var(--space-lg); align-items: flex-start; padding: var(--space-lg) 0;
+            border-bottom: 1px solid var(--db-border); position: relative;
+        }
+        .step:last-child { border-bottom: none; }
+        .step-number {
+            width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+            background: var(--db-gradient-accent); border-radius: 50%; color: white;
+            font-family: 'CalHeading', sans-serif; font-size: 1.2rem; flex-shrink: 0;
+        }
+        .step-title { font-family: 'CalHeading', sans-serif; font-size: 1.1rem; color: var(--db-black); margin-bottom: 4px; }
+        .step-desc { color: var(--db-gray); font-size: 0.9rem; line-height: 1.6; }
+
+        /* ===== SYNERGY ===== */
+        .synergy-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+            gap: var(--space-lg); margin-top: var(--space-xl);
+        }
+        .synergy-card {
+            background: var(--db-white); border: 1px solid var(--db-border); border-radius: 20px;
+            padding: var(--space-lg); text-align: center; transition: all 0.3s var(--ease-smooth);
+        }
+        .synergy-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .synergy-icon {
+            width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;
+            background: var(--db-gradient-accent); border-radius: 16px; font-size: 2rem;
+            margin: 0 auto var(--space-md);
+        }
+        .synergy-title { font-family: 'CalHeading', sans-serif; font-size: 1.2rem; color: var(--db-black); margin-bottom: var(--space-xs); }
+        .synergy-desc { color: var(--db-gray); font-size: 0.85rem; line-height: 1.5; }
+        .synergy-flow {
+            max-width: 800px; margin: var(--space-xl) auto 0;
+            background: var(--db-white); border: 1px solid var(--db-border); border-radius: 20px;
+            padding: var(--space-xl); text-align: center;
+        }
+        .synergy-flow-text { color: var(--db-gray); font-size: 1rem; line-height: 2; }
+        .synergy-flow-text strong { color: var(--db-black); }
+        .synergy-flow-text .accent { font-family: 'Childish', cursive; color: var(--db-accent); }
+
+        /* ===== TERMS ===== */
+        .terms-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+            gap: var(--space-md); max-width: 1000px; margin: var(--space-xl) auto 0;
+        }
+        .term-item {
+            background: var(--db-white); border: 1px solid var(--db-border); border-radius: 12px;
+            padding: var(--space-md); text-align: center;
+        }
+        .term-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--db-gray-light); margin-bottom: 6px; }
+        .term-value { font-family: 'CalHeading', sans-serif; font-size: 1rem; color: var(--db-black); }
+
+        /* ===== CTA ===== */
+        .cta-section { padding: var(--space-3xl) var(--space-sm); background: var(--db-gradient-dark); position: relative; overflow: hidden; }
+        .cta-content { text-align: center; position: relative; z-index: 2; }
+        .cta-title { font-family: 'CalHeading', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); color: white; margin-bottom: var(--space-md); }
+        .cta-subtitle { font-size: clamp(1rem, 2.5vw, 1.2rem); color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-xl); max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-buttons { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
+        .cta-button {
+            padding: 16px 36px; border-radius: 12px; font-family: 'CalHeading', sans-serif;
+            font-size: 1.1rem; cursor: pointer; transition: all 0.3s var(--ease-smooth);
+            display: inline-flex; align-items: center; gap: var(--space-sm); text-decoration: none;
+        }
+        .cta-button.primary { background: var(--db-gradient-accent); color: white; border: none; }
+        .cta-button.primary:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(249, 115, 22, 0.3); }
+        .cta-button.secondary { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); }
+        .cta-button.secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: var(--space-lg); text-align: center; background: var(--db-bg);
+            border-top: 1px solid var(--db-border);
+        }
+        .footer-text { color: var(--db-gray-light); font-size: 0.85rem; line-height: 1.8; }
+        .footer-validity { font-family: 'CalHeading', sans-serif; color: var(--db-gray); margin-bottom: var(--space-sm); }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        @keyframes iconFloat { 0%, 100% { transform: translateY(0) rotate(0deg); } 25% { transform: translateY(-5px) rotate(5deg); } 75% { transform: translateY(5px) rotate(-5deg); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.8; } }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            :root { --space-lg: 1.5rem; --space-xl: 2rem; --space-2xl: 3rem; --space-3xl: 4rem; }
+            .container { padding: 0 var(--space-md); }
+            .nav-partnership { font-size: 1rem; }
+            .nav-x { font-size: 1.2rem; }
+            .nav-cta { padding: 10px 16px; font-size: 0.9rem; }
+            .logo-img { width: 40px; height: 40px; }
+            .hero { min-height: 100vh; padding: calc(70px + var(--space-2xl)) var(--space-md) var(--space-2xl); }
+            .floating-element { display: none; }
+            .intro-card { padding: var(--space-lg); }
+            .budget-callout { padding: var(--space-lg); }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .cta-button { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loading -->
+    <div class="loading-animation" style="
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(135deg, #2c2c30 0%, #1d1d20 100%);
+        z-index: 10000; display: flex; align-items: center; justify-content: center;
+        animation: fadeOutLoader 0.5s ease 1.5s forwards;">
+        <img src="https://danblocks-com.s3.us-west-2.amazonaws.com/danblocks+logo+transparent.png"
+            alt="Loading" style="width: 80px; height: 80px; animation: pulse 1s ease infinite;">
+    </div>
+    <style>
+        @keyframes fadeOutLoader { to { opacity: 0; visibility: hidden; } }
+    </style>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="nav-logo">
+                    <img src="https://danblocks-com.s3.us-west-2.amazonaws.com/danblocks+logo+transparent.png" alt="DanBlocks" class="logo-img">
+                    <span class="nav-partnership">
+                        DanBlocks <span class="nav-x">×</span> ProfilDecor
+                    </span>
+                </a>
+                <a href="tel:+40752487271" class="nav-cta">Sună Acum</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="floating-element">🔍</div>
+        <div class="floating-element">📈</div>
+        <div class="floating-element">🚀</div>
+        <div class="floating-element">💰</div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span style="font-size:1.2rem">⚡</span>
+                    <span class="hero-badge-text">OFERTĂ GOOGLE ADS</span>
+                </div>
+                <h1 class="hero-title">
+                    Captează Cererea Activă cu<br>
+                    <span class="hero-title-accent">Google Ads</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Servicii complete de performanță Google Ads pentru creșterea vânzărilor și a vizibilității online ProfilDecor
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">Ex-Google</span>
+                        <span class="stat-label">Experiență Internă</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Agenții Instruite</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">$5M+</span>
+                        <span class="stat-label">Ad Spend Gestionat</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-card">
+                <p><strong>Salut Magda,</strong></p>
+                <p>Îți mulțumesc pentru deschiderea de a face următorul pas împreună! Mă bucur că deja colaborăm pe partea de Social Media și Facebook Ads - Lead Gen și că avem o bază solidă pe care să construim.</p>
+                <p>Propunerea de mai jos vine cu o experiență solidă: am lucrat intern la <strong>Google</strong>, am gestionat <strong>peste $5 milioane în Google Ads spend</strong> și am susținut traininguri și workshopuri pentru <strong>peste 50 de agenții de marketing</strong> din România. Cunosc platforma din interior — atât din perspectiva Google, cât și din cea a advertiser-ului.</p>
+                <p>Cu întregul ecosistem Google la dispoziție — <strong>Google Ads, Analytics 4, Tag Manager, Merchant Center, Looker Studio</strong> — putem construi un sistem de achiziție complet și scalabil, cu <strong>creștere estimată semnificativă</strong> a numărului de lead-uri calificate din Google Search, Display și YouTube.</p>
+                <div class="intro-highlight">
+                    <p>💡 Consider că <strong>acum e momentul ideal</strong> să pregătim infrastructura Google Ads – să fim gata cu totul înainte de sezonul cald, când cererea explodează și fiecare zi fără prezență în Google înseamnă lead-uri pierdute.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Google Ads -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">De ce Google Ads?</span>
+                <h2 class="section-title">Captează Intenția Directă</h2>
+                <p class="section-subtitle">Diferența față de Facebook Ads: aici capturam intenția directă de cumpărare, în momentul exact în care cineva caută pe Google</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-title">Intenție directă de cumpărare</div>
+                    <div class="benefit-text">Clientul caută activ "profile decorative fatada" – nu trebuie convins, trebuie doar găsit</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📍</div>
+                    <div class="benefit-title">Targetare geografică</div>
+                    <div class="benefit-text">Campanii focusate pe zonele cu cea mai mare cerere pentru profile decorative</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-title">Măsurabilitate completă</div>
+                    <div class="benefit-text">Fiecare leu investit poate fi urmărit până la lead sau vânzare</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <div class="benefit-title">Scalabilitate</div>
+                    <div class="benefit-text">Bugetul crește proporțional cu rezultatele dovedite</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <div class="benefit-title">Competiție slabă digital</div>
+                    <div class="benefit-text">Piața de profile decorative nu este saturată în Google Ads – costuri per click mai mici</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔄</div>
+                    <div class="benefit-title">Sinergie cu Facebook Ads</div>
+                    <div class="benefit-text">Remarketing cross-platform și audiență consolidată între cele două canale</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Ce include oferta</span>
+                <h2 class="section-title">Setup Complet Google Marketing</h2>
+                <p class="section-subtitle">Configurare tehnică avansată a întregului ecosistem Google</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-card-icon">⚙️</div>
+                    <div class="feature-card-title">Setup Google Marketing Solutions</div>
+                    <div class="feature-card-desc">Configurarea completă a întregului ecosistem Google pentru ProfilDecor</div>
+                    <ul class="feature-list">
+                        <li><strong>Google Ads</strong> – Creare cont, structurare campanii, setare conversii</li>
+                        <li><strong>Google Analytics 4</strong> – Tracking complet, evenimente personalizate, audiență</li>
+                        <li><strong>Google Tag Manager</strong> – Sistem centralizat de tag-uri și acțiuni de conversie</li>
+                        <li><strong>Google Consent Mode v2</strong> – Conformitate GDPR</li>
+                        <li><strong>Google Merchant Center</strong> – Feed produse pentru profile decorative</li>
+                        <li><strong>Google My Business</strong> – Optimizare profil, verificare, categorii, fotografii</li>
+                        <li><strong>Google Search Console</strong> – Monitorizare indexare și performanță organică</li>
+                        <li><strong>Looker Studio</strong> – Dashboard personalizat de vizualizare date în timp real</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">🎯</div>
+                    <div class="feature-card-title">Conversion Tracking & Remarketing</div>
+                    <div class="feature-card-desc">Urmărire precisă a fiecărei acțiuni și reconectare cu vizitatorii interesați</div>
+                    <ul class="feature-list">
+                        <li>Sistem precis de urmărire a conversiilor cu <strong>valoare atribuită</strong> fiecărei acțiuni</li>
+                        <li>Tracking: formular contact, apeluri telefonice, <strong>WhatsApp clicks</strong>, cereri randare 3D</li>
+                        <li>Setare <strong>etichete remarketing</strong> și liste personalizate de audiență</li>
+                        <li>Integrare cu audiența existentă din <strong>Facebook Ads</strong> pentru remarketing cross-platform</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campaigns -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Structura campaniilor</span>
+                <h2 class="section-title">4 Tipuri de Campanii</h2>
+                <p class="section-subtitle">Fiecare tip de campanie are un rol specific în funnel-ul de marketing</p>
+            </div>
+            <div class="campaigns-grid">
+                <div class="campaign-card">
+                    <div class="campaign-icon">🔍</div>
+                    <div class="campaign-title">Search (Căutare)</div>
+                    <div class="campaign-desc">Campanii pe cuvinte cheie cu intenție directă de cumpărare</div>
+                    <ul class="campaign-list">
+                        <li>Campanii pe categorii de produse (cornișe, brauri, ancadramente, coloane)</li>
+                        <li>Campanii pe intenție: awareness, consideration, conversion</li>
+                        <li>Campanii locale targetate pe zone cheie de livrare/montaj</li>
+                    </ul>
+                </div>
+                <div class="campaign-card">
+                    <div class="campaign-icon">🖼️</div>
+                    <div class="campaign-title">Display</div>
+                    <div class="campaign-desc">Bannere vizuale cu proiecte reale before/after</div>
+                    <ul class="campaign-list">
+                        <li>Remarketing vizitatori site (inclusiv audiență Facebook Ads)</li>
+                        <li>Audiență similară (lookalike) bazată pe clienți existenți</li>
+                        <li>Creative profesionale realizate deja de echipa DanBlocks</li>
+                    </ul>
+                </div>
+                <div class="campaign-card">
+                    <div class="campaign-icon">🎬</div>
+                    <div class="campaign-title">YouTube</div>
+                    <div class="campaign-desc">Video ads cu proiecte finalizate și testimoniale</div>
+                    <ul class="campaign-list">
+                        <li>Conținut video deja creat pe Social Media</li>
+                        <li>Targetare audiență: construcții, renovări, design exterior</li>
+                        <li>Format: bumper ads + in-stream ads</li>
+                    </ul>
+                </div>
+                <div class="campaign-card">
+                    <div class="campaign-icon">⚡</div>
+                    <div class="campaign-title">Performance Max</div>
+                    <div class="campaign-desc">Campanii automate pe toate canalele Google</div>
+                    <ul class="campaign-list">
+                        <li>Search, Display, YouTube, Gmail și Discover combinate</li>
+                        <li>Optimizate pe lead generation</li>
+                        <li>Cereri de ofertă, consultanță gratuită, randare 3D</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maintenance -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Lunar</span>
+                <h2 class="section-title">Mentenanță & Optimizare</h2>
+                <p class="section-subtitle">Servicii incluse lunar pentru performanță maximă continuă</p>
+            </div>
+            <div class="maintenance-grid">
+                <div class="maintenance-item">
+                    <div class="maintenance-icon">🔧</div>
+                    <div>
+                        <div class="maintenance-title">Optimizare Campanii</div>
+                        <div class="maintenance-desc">Ajustări continue de bidding, audiență, cuvinte cheie și ad copy</div>
+                    </div>
+                </div>
+                <div class="maintenance-item">
+                    <div class="maintenance-icon">💰</div>
+                    <div>
+                        <div class="maintenance-title">Management Buget</div>
+                        <div class="maintenance-desc">Alocare eficientă pe campaniile cu cel mai bun ROI</div>
+                    </div>
+                </div>
+                <div class="maintenance-item">
+                    <div class="maintenance-icon">🧪</div>
+                    <div>
+                        <div class="maintenance-title">A/B Testing</div>
+                        <div class="maintenance-desc">Testare continuă reclame, landing pages și strategii de bidding</div>
+                    </div>
+                </div>
+                <div class="maintenance-item">
+                    <div class="maintenance-icon">🚫</div>
+                    <div>
+                        <div class="maintenance-title">Negative Keywords</div>
+                        <div class="maintenance-desc">Curățare și optimizare listă de cuvinte cheie negative</div>
+                    </div>
+                </div>
+                <div class="maintenance-item">
+                    <div class="maintenance-icon">⭐</div>
+                    <div>
+                        <div class="maintenance-title">Quality Score</div>
+                        <div class="maintenance-desc">Îmbunătățirea scorului de calitate pentru costuri per click mai mici</div>
+                    </div>
+                </div>
+                <div class="maintenance-item">
+                    <div class="maintenance-icon">📊</div>
+                    <div>
+                        <div class="maintenance-title">Raportare Looker Studio</div>
+                        <div class="maintenance-desc">Rapoarte interactive lunare cu metrici de performanță</div>
+                    </div>
+                </div>
+                <div class="maintenance-item">
+                    <div class="maintenance-icon">🎥</div>
+                    <div>
+                        <div class="maintenance-title">Check-in Lunar Video</div>
+                        <div class="maintenance-desc">Google Meet pentru analiză performanță și strategie</div>
+                    </div>
+                </div>
+                <div class="maintenance-item">
+                    <div class="maintenance-icon">🚨</div>
+                    <div>
+                        <div class="maintenance-title">Disponibilitate Non-Stop</div>
+                        <div class="maintenance-desc">Intervenție rapidă pentru situații critice (tracking pierdut, cont suspendat)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Transparent</span>
+                <h2 class="section-title">Investiție</h2>
+                <p class="section-subtitle">Un singur pachet complet: Setup + Mentenanță Lunară</p>
+            </div>
+            <!-- Discount Banner -->
+            <div style="max-width: 700px; margin: 0 auto var(--space-xl); background: linear-gradient(135deg, rgba(249,115,22,0.08) 0%, rgba(249,115,22,0.02) 100%); border: 2px solid var(--db-accent); border-radius: 16px; padding: var(--space-lg); text-align: center;">
+                <div style="font-size: 1.5rem; margin-bottom: var(--space-xs);">🤝</div>
+                <div style="font-family: 'CalHeading', sans-serif; font-size: 1.3rem; color: var(--db-black); margin-bottom: var(--space-xs);">Discount Partener</div>
+                <p style="color: var(--db-gray); font-size: 0.95rem; line-height: 1.6;">Datorită colaborării existente, ProfilDecor beneficiază de <strong style="color: var(--db-accent);">33% discount</strong> la setup și <strong style="color: var(--db-accent);">33% discount</strong> la mentenanța lunară primele 3 luni</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-icon">⚙️</div>
+                        <h3 class="pricing-name">Setup Complet</h3>
+                        <p class="pricing-desc">Configurare întregului ecosistem Google · plată unică</p>
+                    </div>
+                    <div class="pricing-price">
+                        <div style="text-decoration: line-through; color: var(--db-gray-light); font-size: 1.2rem; font-family: 'CalHeading', sans-serif; margin-bottom: 4px;">1.500 EUR</div>
+                        <div class="price-amount">
+                            <span class="accent-number">1.005</span>
+                            <span class="price-currency">EUR</span>
+                        </div>
+                        <div class="price-period">plată unică · <span style="color: var(--db-accent); font-weight: 600;">-33% discount</span></div>
+                        <div class="price-note">✓ Garanție 2 luni inclusă</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Google Ads</span> – cont, campanii, conversii</span></li>
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Analytics 4</span> + Tag Manager + Consent Mode</span></li>
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Google My Business</span> optimizat</span></li>
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Search Console</span> + Merchant Center</span></li>
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Looker Studio</span> dashboard personalizat</span></li>
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Audit UI/UX</span> și recomandări site</span></li>
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Strategie</span> + cercetare keywords + analiză competiție</span></li>
+                    </ul>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <div class="pricing-icon">🔄</div>
+                        <h3 class="pricing-name">Mentenanță Lunară</h3>
+                        <p class="pricing-desc">Optimizare continuă și suport dedicat · recurent</p>
+                    </div>
+                    <div class="pricing-price">
+                        <div style="text-decoration: line-through; color: var(--db-gray-light); font-size: 1.2rem; font-family: 'CalHeading', sans-serif; margin-bottom: 4px;">de la 500 EUR / lună</div>
+                        <div class="price-amount">
+                            <span style="font-size: 0.6em; color: var(--db-gray); margin-right: 4px;">de la</span>
+                            <span class="accent-number">335</span>
+                            <span class="price-currency">EUR / lună</span>
+                        </div>
+                        <div class="price-period">primele 3 luni · <span style="color: var(--db-accent); font-weight: 600;">-33% discount</span></div>
+                        <div class="price-note">Din luna 4: de la 500 EUR / lună (preț standard)</div>
+                        <div style="font-size: 0.8rem; color: var(--db-gray); margin-top: var(--space-xs);">⚡ Mentenanța începe din prima zi de spend a contului Google Ads</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Optimizare campanii</span> – bidding, audiență, keywords</span></li>
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Management buget</span> – alocare pe cel mai bun ROI</span></li>
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">A/B Testing</span> continuu pe reclame și landing pages</span></li>
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Raportare Looker Studio</span> interactivă lunară</span></li>
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Check-in video</span> lunar Google Meet</span></li>
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Slack integrat</span> cu notificări automate lead-uri noi</span></li>
+                        <li><span class="fi">✓</span><span class="ft"><span class="fh">Disponibilitate non-stop</span> pentru urgențe</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Single CTA for the package -->
+            <div style="max-width: 500px; margin: var(--space-xl) auto 0; text-align: center;">
+                <a href="tel:+40752487271" class="pricing-cta accent" style="display: block; padding: 18px 36px; font-size: 1.2rem;">🚀 Începe Colaborarea</a>
+            </div>
+            <div style="max-width: 700px; margin: var(--space-xl) auto 0; text-align: center;">
+                <p style="color: var(--db-gray); font-size: 0.85rem; line-height: 1.8;">
+                    Prețurile nu includ TVA (companie neplatitoare de TVA).<br>
+                    Prețurile nu includ bugetul de publicitate Google Ads, care se plătește direct către Google.<br>
+                    <strong>Plata setup:</strong> 50% avans la confirmare + 50% la finalizarea implementării.<br>
+                    Plățile pot fi eșalonate în rate, stabilite de comun acord.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Buget recomandat</span>
+                <h2 class="section-title">Buget Publicitar Google Ads</h2>
+            </div>
+            <div class="budget-callout">
+                <div class="budget-icon">💰</div>
+                <div class="budget-title">Recomandare inițială:</div>
+                <div class="budget-amount">1.500 – 3.000 RON / lună</div>
+                <ul class="budget-phases">
+                    <li>🧪 <strong>Luna 1-2:</strong> Faza de testare și colectare date (buget mai conservator)</li>
+                    <li>📈 <strong>Luna 3+:</strong> Scalare pe campaniile cu performanță dovedită</li>
+                </ul>
+                <div class="budget-note">
+                    <strong>Sezonalitate:</strong> Cererea pentru profile decorative crește semnificativ din <strong>martie până în octombrie</strong>. Recomandăm să pornim setup-ul acum pentru a fi 100% pregătiți când sezonul începe. În lunile de iarnă, bugetul poate fi redus la minim sau redirecționat către campanii de brand awareness și remarketing.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Synergy -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Ecosistem complet</span>
+                <h2 class="section-title">Sinergie cu Serviciile Existente</h2>
+                <p class="section-subtitle">Google Ads completează ecosistemul de marketing digital ProfilDecor</p>
+            </div>
+            <div class="synergy-grid">
+                <div class="synergy-card">
+                    <div class="synergy-icon">📱</div>
+                    <div class="synergy-title">Social Media</div>
+                    <div class="synergy-desc">Generează awareness și încredere prin conținut educativ, proiecte reale și testimoniale</div>
+                </div>
+                <div class="synergy-card">
+                    <div class="synergy-icon">📣</div>
+                    <div class="synergy-title">Facebook Ads</div>
+                    <div class="synergy-desc">Targetează audiența pe bază de interese și comportament, generând lead-uri calificate</div>
+                </div>
+                <div class="synergy-card">
+                    <div class="synergy-icon">🔍</div>
+                    <div class="synergy-title">Google Ads</div>
+                    <div class="synergy-desc">Capturează cererea activă – clientul care deja caută profile decorative pe Google</div>
+                </div>
+            </div>
+            <div class="synergy-flow">
+                <p class="synergy-flow-text">
+                    Clientul <strong>vede ProfilDecor</strong> pe social media → <strong>interacționează</strong> cu o reclamă pe Facebook → <strong>caută pe Google</strong> → găsește reclamele → <strong>intră pe site</strong> → solicită consultație sau <span class="accent">randare 3D gratuită</span><br>
+                    Remarketing-ul între platforme închide cercul și <strong>maximizează rata de conversie</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Pas cu pas</span>
+                <h2 class="section-title">Cum Arată Colaborarea</h2>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <div class="step-title">Confirmare Colaborare</div>
+                        <div class="step-desc">Validarea se face prin plata a 50% din valoarea setup-ului</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <div class="step-title">Onboarding</div>
+                        <div class="step-desc">Colectare acces-uri, analiză situație curentă, definire obiective</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <div class="step-title">Setup Tehnic</div>
+                        <div class="step-desc">Implementare Google Ads, Analytics, GTM, GMB și toate instrumentele (1-3 săptămâni)</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div>
+                        <div class="step-title">Lansare Campanii</div>
+                        <div class="step-desc">Imediat după finalizarea setup-ului tehnic, pornim campaniile Search și Display</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div>
+                        <div class="step-title">Optimizare Continuă</div>
+                        <div class="step-desc">Analiză date, ajustări, scalare pe ce funcționează</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div>
+                        <div class="step-title">Review Trimestrial</div>
+                        <div class="step-desc">Evaluare strategică și planificare pe termen lung</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Termeni</span>
+                <h2 class="section-title">Termeni Generali</h2>
+            </div>
+            <div class="terms-grid">
+                <div class="term-item">
+                    <div class="term-label">Perioadă minimă</div>
+                    <div class="term-value">3 luni</div>
+                </div>
+                <div class="term-item">
+                    <div class="term-label">Plata Setup</div>
+                    <div class="term-value">50% avans + 50% final</div>
+                </div>
+                <div class="term-item">
+                    <div class="term-label">Plata Mentenanță</div>
+                    <div class="term-value">Lunar</div>
+                </div>
+                <div class="term-item">
+                    <div class="term-label">Preaviz Reziliere</div>
+                    <div class="term-value">30 zile</div>
+                </div>
+                <div class="term-item">
+                    <div class="term-label">Garanție Setup</div>
+                    <div class="term-value">2 luni incluse</div>
+                </div>
+                <div class="term-item">
+                    <div class="term-label">Flexibilitate Plată</div>
+                    <div class="term-value">Rate disponibile</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    Pregătit să Dominăm<br>
+                    <span class="hero-title-accent">Google?</span>
+                </h2>
+                <p class="cta-subtitle">
+                    Să construim împreună o strategie de creștere solidă și eficientă pentru ProfilDecor. Sezonul vine – hai să fim pregătiți.
+                </p>
+                <div class="cta-buttons">
+                    <a href="tel:+40752487271" class="cta-button primary">
+                        <span>📞</span>
+                        <span>Contactează Acum</span>
+                    </a>
+                    <a href="mailto:hi@danblocks.com" class="cta-button secondary">
+                        <span>📧</span>
+                        <span>hi@danblocks.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-validity">Ofertă valabilă 30 de zile de la data emiterii</p>
+            <p class="footer-text">
+                Cu prietenie, <strong>Dan – DanBlocks</strong><br>
+                📧 hi@danblocks.com<br><br>
+                Această ofertă poate fi personalizată în funcție de nevoile specifice ale ProfilDecor.<br>
+                Powered by DanBlocks
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) { navbar.classList.add('scrolled'); }
+            else { navbar.classList.remove('scrolled'); }
+        });
+
+        setTimeout(() => {
+            const loader = document.querySelector('.loading-animation');
+            if (loader) loader.style.display = 'none';
+        }, 2000);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.benefit-card, .feature-card, .campaign-card, .maintenance-item, .synergy-card, .step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
